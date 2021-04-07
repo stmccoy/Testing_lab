@@ -5,12 +5,15 @@ class Customer:
         self.age = age
         self.drunkenness = 0
 
-    def buy_drink(self, drink):
-        self.wallet -= drink.price
-        self.increase_drunkenness(drink)
+    def buy_drink(self, drink, pub):
+        if self.wallet >= drink.price:
+            self.wallet -= drink.price
+            self.increase_drunkenness(drink)
+            pub.sell_drink(drink, self)
 
     def increase_drunkenness(self, drink):
         self.drunkenness += drink.alcohol_level
+        
 
 
 

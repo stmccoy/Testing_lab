@@ -27,5 +27,10 @@ class TestPub(unittest.TestCase):
     def test_sell_drink_underrage(self):
         self.pub.sell_drink(self.drink_1, self.customer_2)
         self.assertEqual(100, self.pub.till)
+   
+    def test_sell_drink_too_drunk(self):
+        for _ in range(3):
+            self.customer_1.buy_drink(self.drink_1, self.pub)
+        self.assertEqual(110, self.pub.till)
 
     
