@@ -3,3 +3,6 @@ class Pub:
         self.name = name
         self.till = till
         self.drinks_list = drinks_list
+
+    def sell_drink(self, drink):
+        self.till += drink.price
