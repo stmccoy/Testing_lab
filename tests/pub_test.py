@@ -29,8 +29,10 @@ class TestPub(unittest.TestCase):
         self.assertEqual(100, self.pub.till)
    
     def test_sell_drink_too_drunk(self):
-        for _ in range(3):
-            self.customer_1.buy_drink(self.drink_1, self.pub)
-        self.assertEqual(110, self.pub.till)
+        self.customer_1.buy_drink(self.drink_1, self.pub)
+        self.customer_1.buy_drink(self.drink_1, self.pub)
+        self.customer_1.buy_drink(self.drink_1, self.pub)
+        self.customer_1.buy_drink(self.drink_1, self.pub)
+        self.assertEqual(115, self.pub.till)
 
     
