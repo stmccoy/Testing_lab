@@ -5,7 +5,7 @@ class TestDrink(unittest.TestCase):
     
     def setUp(self):
 
-        self.drink_1 = Drink("Guinness", 4.75)
+        self.drink_1 = Drink("Guinness", 4.75, 4)
 
     # START OF TESTS
 
@@ -14,3 +14,7 @@ class TestDrink(unittest.TestCase):
 
     def test_drink_has_price(self):
         self.assertEqual(4.75, self.drink_1.price)
+    
+    def test_alcohol_level(self):
+        self.assertEqual(4, self.drink_1.alcohol_level)
+    
