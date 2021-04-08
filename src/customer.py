@@ -7,8 +7,8 @@ class Customer:
 
     def buy_drink(self, drink, pub):
         if self.wallet >= drink.price:
-            self.wallet -= drink.price
             pub.sell_drink(drink, self)
+            self.wallet -= drink.price
             self.increase_drunkenness(drink)
 
     def increase_drunkenness(self, drink):
